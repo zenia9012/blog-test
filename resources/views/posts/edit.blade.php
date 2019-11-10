@@ -20,15 +20,7 @@
                     @csrf
                     @method('patch')
 
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="body">Body</label>
-                        <textarea class="form-control" id="body" rows="3" name="body">{{ $post->body }}</textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <edit-post-component :post-data="{{ json_encode($post) }}"></edit-post-component>
 
                 </form>
             </div>
